@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>果冻俄罗斯方块</title>
+  <link rel="stylesheet" href="tetris.css" />
+</head>
+<body>
+  <div class="blobs" aria-hidden="true">
+    <span class="blob b1"></span>
+    <span class="blob b2"></span>
+    <span class="blob b3"></span>
+    <span class="blob b4"></span>
+  </div>
+
+  <main class="app">
+    <header class="title-bar">
+      <h1>果冻方块</h1>
+      <p>软软的、亮晶晶的俄罗斯方块</p>
+    </header>
+
+    <section class="play">
+      <aside class="panel left-panel">
+        <div class="card">
+          <span class="label">分数</span>
+          <strong id="score">0</strong>
+        </div>
+        <div class="card">
+          <span class="label">最高</span>
+          <strong id="high-score">0</strong>
+        </div>
+        <div class="card">
+          <span class="label">等级</span>
+          <strong id="level">1</strong>
+        </div>
+        <div class="card">
+          <span class="label">消行</span>
+          <strong id="lines">0</strong>
+        </div>
+      </aside>
+
+      <div class="board-wrap">
+        <canvas id="board" width="300" height="600" aria-label="俄罗斯方块游戏区域"></canvas>
+        <div id="overlay" class="overlay">
+          <p id="overlay-title">果冻方块</p>
+          <p id="overlay-sub">← → 移动 · ↑ 旋转 · ↓ 加速 · 空格硬降</p>
+          <button id="start-btn" type="button">开始游戏</button>
+        </div>
+      </div>
+
+      <aside class="panel right-panel">
+        <div class="card preview-card">
+          <span class="label">下一个</span>
+          <canvas id="next" width="120" height="120"></canvas>
+        </div>
+        <div class="card preview-card">
+          <span class="label">暂存 C</span>
+          <canvas id="hold" width="120" height="120"></canvas>
+        </div>
+        <p class="hint">P 暂停 · C 暂存方块</p>
+      </aside>
+    </section>
+
+    <nav class="touch" aria-label="触摸控制">
+      <button type="button" data-act="left">←</button>
+      <button type="button" data-act="rot">↻</button>
+      <button type="button" data-act="right">→</button>
+      <button type="button" data-act="down">↓</button>
+      <button type="button" data-act="drop">落</button>
+      <button type="button" data-act="hold">C</button>
+    </nav>
+  </main>
+
+  <script src="tetris.js"></script>
+</body>
+</html>
